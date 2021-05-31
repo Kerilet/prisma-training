@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-// import create from './controllers/categories/create';
+import create from './controllers/categories/create';
 import del from './controllers/categories/delete.js';
 import findAll from './controllers/categories/findAll.js';
 import findOne from './controllers/categories/findOne.js';
@@ -12,6 +12,8 @@ router.get('/categories', findAll);
 router.get('/categories/:id', findOne);
 
 router.delete('/categories/:id', del);
+
+router.post('/categories/', create);
 
 router.put('/categories', update);
 
