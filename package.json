@@ -1,0 +1,27 @@
+{
+  "name": "catalog",
+  "version": "1.0.0",
+  "description": "is this a jojo reference",
+  "type": "module",
+  "main": "./src/index.js",
+  "extension": ".js",
+  "scripts": {
+    "migrate": "prisma migrate dev --name ",
+    "dev": "forever -w ./src/index.js --input-type=module"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^2.23.0",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.0.0",
+    "prisma": "^2.23.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.3",
+    "forever": "^3.0.4"
+  }
+}
