@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 import Router from 'koa-router';
 import create from './controllers/categories/create';
 import del from './controllers/categories/delete.js';
@@ -21,12 +22,36 @@ router.put('/categories', update);
 
 router.get('/products', findAll);
 
+router.get('/products/:id', findOne);
+
+router.delete('/products/:id', del);
+
+router.post('/products/', create);
+
+router.put('/products', update);
+
 // products (general) above, products (photos) below
 
-router.get('/categories/:id/photos', findOne);
+router.get('/products/:id/photos', findOne);
+
+router.get('/products/:id', findOne);
+
+router.delete('/products/:id', del);
+
+router.post('/products/', create);
+
+router.put('/products', update);
 
 // products (photos) above, products (reviews) below
 
 router.get('/products/:id/reviews', findAll);
+
+router.get('/products/:id', findOne);
+
+router.delete('/products/:id', del);
+
+router.post('/products/', create);
+
+router.put('/products', update);
 
 export default router;
