@@ -2,10 +2,10 @@ import prisma from '../../../core/prismaConfig.js';
 
 export default async (ctx) => {
   const urlId = Number.parseInt(ctx.params.id, 0);
-  const [product] = await prisma.product.findMany({
+  const [review] = await prisma.review.findMany({
     where: {
       id: urlId,
     },
   });
-  ctx.body = product;
+  ctx.body = review;
 };

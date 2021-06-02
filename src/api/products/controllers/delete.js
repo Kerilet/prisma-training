@@ -1,12 +1,10 @@
-import Prisma from '@prisma/client';
-
-const { PrismaClient } = Prisma;
-
-const prisma = new PrismaClient();
+import prisma from '../../../core/prismaConfig.js';
 
 export default async (ctx) => {
+  const id = Number.parseInt(ctx.params.id, 0);
   await prisma.product.delete({
-    where: { id: ctx.params.id },
+    where: { id },
   });
-  ctx.body += 'deleted succesfully';
+  ctx.status = 204;
+  ctx.body = '';
 };

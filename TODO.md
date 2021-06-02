@@ -6,6 +6,6 @@
 # Todo
 - Endpoints (all crud's):
     - `/categories`  -- DONE! YAY!
-    - `/products`
-    - `/products/:id/photos`
-    - `/products/:id/reviews`
+    - `/products` -- DONE! YAY!
+    - `/products/:id/photos` -- why are we still here?
+    - `/products/:id/reviews` -- just to suffer?

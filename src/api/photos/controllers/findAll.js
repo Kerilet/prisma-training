@@ -1,6 +1,6 @@
 import prisma from '../../../core/prismaConfig.js';
 
 export default async (ctx) => {
-  const products = await prisma.product.findMany();
-  ctx.body = products;
+  const photos = await prisma.photo.findMany();
+  ctx.body = photos;
 };
