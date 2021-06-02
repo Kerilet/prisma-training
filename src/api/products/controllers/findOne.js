@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import Prisma from '@prisma/client';
 
 const { PrismaClient } = Prisma;
@@ -6,10 +5,11 @@ const { PrismaClient } = Prisma;
 const prisma = new PrismaClient();
 
 export default async (ctx) => {
-  const photos = await prisma.category.findMany({
+  const urlId = Number.parseInt(ctx.params.id, 2);
+  const [product] = await prisma.product.findMany({
     where: {
-      id: `${ctx.params.id}`,
+      id: urlId,
     },
   });
-  ctx.body = photos;
+  ctx.body = product;
 };

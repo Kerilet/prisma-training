@@ -5,7 +5,7 @@
 
 # Todo
 - Endpoints (all crud's):
-    - `/categories`
+    - `/categories`  -- DONE! YAY!
     - `/products`
     - `/products/:id/photos`
     - `/products/:id/reviews`

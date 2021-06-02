@@ -5,8 +5,9 @@ const { PrismaClient } = Prisma;
 const prisma = new PrismaClient();
 
 export default async (ctx) => {
-  await prisma.user.delete({
-    where: { id: ctx.params.id },
+  const products = await prisma.products.update({
+    where: { id: 1 },
+    data: { published: true },
   });
-  ctx.body += 'deleted succesfully';
+  ctx.body = products;
 };

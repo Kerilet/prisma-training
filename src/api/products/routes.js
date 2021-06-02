@@ -1,4 +1,3 @@
-/* eslint-disable eol-last */
 import Router from 'koa-router';
 import create from './controllers/create.js';
 import del from './controllers/delete.js';
@@ -7,6 +6,8 @@ import findOne from './controllers/findOne.js';
 import update from './controllers/update.js';
 
 const router = new Router();
+
+// router.use('/:id/photos', )
 
 router.get('/', findAll);
 
@@ -19,3 +20,5 @@ router.post('/', create);
 router.put('/:id', update);
 
 export default router;
+
+// lembre do router.use('/categories', categories.routes(), categories.allowedMethods());

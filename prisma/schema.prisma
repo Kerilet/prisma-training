@@ -23,6 +23,7 @@ model Product {
     width          Float?
     depth          Float?
     reviews        Review[]
+    @@unique([barcode, title], name: "barcode")
 }
 
 model Category {
@@ -31,6 +32,7 @@ model Category {
     published Boolean   @default(true)
     products  Product[]
     parentId  Int?
+    @@unique([title, parentId], name: "title")
 }
 
 model Photo {

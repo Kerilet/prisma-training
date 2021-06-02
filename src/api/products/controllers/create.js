@@ -5,12 +5,12 @@ const { PrismaClient } = Prisma;
 const prisma = new PrismaClient();
 
 export default async (ctx) => {
-  const categories = await prisma.user.create({
+  const products = await prisma.product.create({
     data: {
       title: 'XBOX',
       published: false,
       parentId: null,
     },
   });
-  ctx.body = categories;
+  ctx.body = products;
 };
