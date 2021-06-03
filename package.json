@@ -15,7 +15,9 @@
     "@prisma/client": "^2.23.0",
     "koa": "^2.13.1",
     "koa-body": "^4.2.0",
+    "koa-mount": "^4.0.0",
     "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
     "prisma": "^2.23.0"
   },
   "devDependencies": {

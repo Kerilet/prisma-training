@@ -7,8 +7,6 @@ import update from './controllers/update.js';
 
 const router = new Router();
 
-// router.use('/:id/photos', )
-
 router.get('/', findAll);
 
 router.get('/:id', findOne);

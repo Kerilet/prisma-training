@@ -4,8 +4,6 @@
 - for now that's all folks!
 
 # Todo
-- Endpoints (all crud's):
-    - `/categories`  -- DONE! YAY!
-    - `/products` -- DONE! YAY!
-    - `/products/:id/photos` -- why are we still here?
-    - `/products/:id/reviews` -- just to suffer?
+fazer o upload usando o cloudinary, e não no projeto.
+LEMBRANDO: só vai mudar na função "upload", o resto fica quietinho
+ALSO LEMBRANDO: imagem/foto/pimbinhaaquatica não se sobe 2 vezes, ent n coloca o update

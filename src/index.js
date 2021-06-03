@@ -1,10 +1,15 @@
+/* eslint-disable no-console */
 import Koa from 'koa';
 import koaBody from 'koa-body';
+import serve from 'koa-static';
+import koaMount from 'koa-mount';
 import router from './api/routes.js';
 
 const app = new Koa();
 
-app.use(koaBody());
+app.use(koaBody({ multipart: true, uploadDir: '.' }));
+
+app.use(koaMount('/uploads', serve('./uploads')));
 
 app
   .use(router.routes())
