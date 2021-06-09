@@ -1,25 +1,20 @@
-import fs from 'fs';
 import { promisify } from 'util';
-import path from 'path';
+import cloudinary from '../../../config/cloudinary.js';
 import prisma from '../../../core/prismaConfig.js';
 
-const copy = promisify(fs.copyFile);
+const cloudUpload = promisify(cloudinary.v2.uploader.upload);
 
-const upload = async (file) => {
-  await copy(file.path, path.join('./uploads/', file.name));
-  return `http://localhost:3000/uploads/${file.name}`;
+const upload = async (file, id) => {
+  const uploaded = await cloudUpload(file.path, { public_id: `products/${id}/${file.name}` });
+  return uploaded.secure_url;
 };
 
 export default async (ctx) => {
-  // const photos = await prisma.photo.create({
-  //   data: ctx.request.body,
-  // });
-  // ctx.body = photos;
   const { files } = ctx.request;
   if (files) {
     const { photo } = files;
     if (photo) {
-      const uploaded = await upload(photo);
+      const uploaded = await upload(photo, ctx.params.id);
       const data = await prisma.photo.create({
         data: {
           title: ctx.request.body.title,
