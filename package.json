@@ -7,6 +7,7 @@
   "extension": ".js",
   "scripts": {
     "migrate": "prisma migrate dev --name ",
+    "sync": "prisma migrate dev",
     "dev": "forever -w ./src/index.js --input-type=module"
   },
   "author": "",
@@ -19,7 +20,8 @@
     "koa-mount": "^4.0.0",
     "koa-router": "^10.0.0",
     "koa-static": "^5.0.0",
-    "prisma": "^2.23.0"
+    "prisma": "^2.23.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "^7.27.0",
